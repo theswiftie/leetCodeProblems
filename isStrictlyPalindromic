@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+        System.out.println(isStrictlyPalindromic(9));
+    }
+    public static boolean isStrictlyPalindromic(int n) {
+        String inBase = Integer.toBinaryString(n);
+        System.out.println(inBase);
+        return isStrictlyPalindromic(inBase);
+    }
+    private static boolean isStrictlyPalindromic(String n) {
+        if (n.length() == 0 || n.length() == 1) {
+            return true;
+        }
+        else {
+            if ((n.charAt(0)) == (n.charAt(n.length() - 1))) {
+                return isStrictlyPalindromic(n.substring(1, n.length() - 1));
+            }
+            else {
+                return false;
+            }
+        }
+    }
+}
