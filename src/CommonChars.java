@@ -1,3 +1,5 @@
+//Leetcode Problem 1002
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +14,13 @@ public class CommonChars {
         for (int i = 2; i < words.length; i++){
             commonLetters = commonChars(commonLetters, words[i]);
         }
-        List <String> commonChars = new ArrayList<String>(Arrays.asList(commonLetters.split("")));
-        return commonChars;
+        if (commonLetters.isEmpty()) {
+            return new ArrayList<String>();
+        }
+        else {
+            List <String> commonChars = new ArrayList<String>(Arrays.asList(commonLetters.split("")));
+            return commonChars;
+        }
     }
     public static String commonChars (String word1, String word2) {
         String commonLetters = "";
