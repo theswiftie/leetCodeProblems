@@ -1,11 +1,10 @@
+import re
+
 class Solution (object):
     def isPalindrome(self, s):
-        phrase = ""
-        for letter in s:
-            if letter.isalnum():
-                phrase += letter.lower()
+        s = (re.sub(r'[^\w]', '', s)).replace('_', '').lower()
 
-        return phrase == phrase[::-1]
+        return s == s[::-1]
 
 sol = Solution()
 print(sol.isPalindrome("race a car"));
