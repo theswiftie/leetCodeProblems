@@ -12,11 +12,13 @@ public:
             if (brace == '{' || brace == '[' || brace == '(') {
                 parenStack.push(brace);
             }
-            else if (!parenStack.empty() && (parenStack.top() == '{' && brace == '}' || parenStack.top() == '[' && brace == ']' || parenStack.top() == '(' && brace == ')')){
-                parenStack.pop();
-            }
             else {
-                return false;
+                if (!parenStack.empty() && (parenStack.top() == '{' && brace == '}' || parenStack.top() == '[' && brace == ']' || parenStack.top() == '(' && brace == ')')){
+                    parenStack.pop();
+                }
+                else {
+                    return false;
+                }
             }
         }
         return true;
