@@ -24,7 +24,7 @@ public class KeyboardRow {
         letter = Character.toLowerCase(letter);
         String firstRow = "qwertyuiop";
         String secondRow = "asdfghjkl";
-        String thirdRow = "zxcvbnm";
+        //String thirdRow = "zxcvbnm";
 
         if (firstRow.indexOf(letter) != -1) {
             return 0;

@@ -10,7 +10,7 @@ public class SortArrayList {
         }
         System.out.println(SortArrayList(nums));
     }
-    private static ArrayList SortArrayList(ArrayList<Integer> nums){
+    private static ArrayList<Integer> SortArrayList (ArrayList<Integer> nums){
         //actual impl to reorder the elements of array
         //return sorted array
 
