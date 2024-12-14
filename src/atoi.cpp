@@ -3,7 +3,7 @@ using namespace std;
 
 int myAtoi(string s) {
     int num = 0;
-    int neg = 1;
+    int sign = 1;
 
     // consume whitespace
     while(s[0] == ' ') {
@@ -11,7 +11,7 @@ int myAtoi(string s) {
     }
     // check for sign
     if (s[0] == '-' || s[0] == '+') {
-        if (s[0] == '-') neg = -1;
+        if (s[0] == '-') sign = -1;
         s = s.erase(0,1);
     }
 
@@ -25,6 +25,7 @@ int myAtoi(string s) {
         }
         s = s.erase(0,1);
     }
+    num *= sign;
     return num;
 }
 
