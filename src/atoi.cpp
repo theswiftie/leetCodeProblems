@@ -17,18 +17,17 @@ int myAtoi(string s) {
 
     // consumer digits
     while (isdigit(s[0])) {
-        if (num != 0) {
-            num = num * 10 + s[0];
-        }
-        else {
-            num = s[0];
-        }
-        s = s.erase(0,1);
-    }
+            if (num != 0) {
+                num = num * 10 + (s[0] - '0');
+            }
+            else {
+                num = s[0] - '0';
+            }
+            s = s.erase(0,1);
+    }    
     num *= sign;
     return num;
 }
-
 int main(int argc, char const *argv[]) {
 
     return 0;
