@@ -18,17 +18,11 @@ int myAtoi(string s) {
     }
 
     // consumer digits
-    while (isdigit(s[0])) {
-        if (num * 10 + (s[0] - '0') > MAX) {
-            num = MAX;
-            break;
-        }
-        else if (num * 10 + (s[0] - '0') < MIN) {
-            num = MIN;
-            break;
-        }
+    while (!s.empty() && isdigit(s[0])) {
+        int digit = s[0] - '0';
+        if (num > (MAX - digit) / 10) { return sign == 1 ? MAX : MIN;}
         else if (num != 0) {
-                num = num * 10 + (s[0] - '0');
+                num = num * 10 + digit;
         }
         else {
             num = s[0] - '0';
